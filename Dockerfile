@@ -2,14 +2,14 @@
 FROM jenkins/agent:alpine-jdk17
 
 # Install Docker CLI
-USER root
-RUN apt-get update && \
-    apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common && \
-    curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
-    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" && \
-    apt-get update && \
-    apt-get install -y docker-ce-cli && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk update && \
+    apk add --no-cache docker-cli
 
-# Set back to the Jenkins user
+# Verify the installation
+RUN docker --version
+
+# Set the user to 'jenkins' to match the base image
 USER jenkins
+
+# Default command to keep the container running
+CMD ["/bin/sh"]
