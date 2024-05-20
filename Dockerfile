@@ -16,3 +16,6 @@ RUN apk add --no-cache python3 pipx
 
 # Switch back to jenkins user
 USER jenkins
+
+# Default command to keep the container running
+CMD ["/bin/sh"]
