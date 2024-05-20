@@ -7,12 +7,10 @@ USER root
 # Install Docker CLI
 RUN apk update && \
     apk add --no-cache docker-cli
-# Verify the installation
-RUN docker --version
 
-# Install Python
+# Install Python3
 RUN apk update && \
-    add --no-cache python3 && \
+    apk add --no-cache python3 && \
     ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools
