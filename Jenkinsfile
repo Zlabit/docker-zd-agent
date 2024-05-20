@@ -1,5 +1,9 @@
 pipeline {
-    agent 'docker-zd-agent'
+    agent {
+        node {
+            label 'docker-zd-agent'
+        }
+    }
     environment {
         DOCKER_REPO = 'dockerrepo.zlabi.dev/docker-zd-agent'
         DOCKER_CREDENTIALS_ID = 'nexus-jenkins'
