@@ -1,6 +1,9 @@
 # Use the official Jenkins agent image as the base image
 FROM jenkins/agent:alpine-jdk17
 
+# Set the user to install docker-cli
+USER root
+
 # Install Docker CLI
 RUN apk update && \
     apk add --no-cache docker-cli
