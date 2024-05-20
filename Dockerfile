@@ -6,7 +6,7 @@ USER root
 
 # Install Docker CLI
 RUN apk update && \
-    apk add --no-cache docker-ce-cli
+    apk add --no-cache docker-cli
 # Verify the installation
 RUN docker --version
 
