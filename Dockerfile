@@ -9,10 +9,8 @@ RUN apk update && \
     apk add --no-cache docker-cli
 
 # Install Python3 and pip
-RUN apk add --no-cache python3 py3-pip && \
-    ln -sf python3 /usr/bin/python && \
-    python3 -m ensurepip && \
-    pip3 install --no-cache --upgrade pip setuptools
+RUN apk update && \
+    apk add --no-cahe py3-pip
 
 # Switch back to jenkins user
 USER jenkins
