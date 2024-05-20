@@ -10,7 +10,7 @@ RUN apk update && \
 
 # Install Python3 and pip
 RUN apk update && \
-    apk add --no-cahe py3-pip
+    apk add --no-cache py3-pip
 
 # Switch back to jenkins user
 USER jenkins
