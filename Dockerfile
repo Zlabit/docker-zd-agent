@@ -14,6 +14,9 @@ RUN apk add --no-cache docker-cli
 ENV PYTHONUNBUFFERED=1
 RUN apk add --no-cache python3 pipx
 
+# Install OpenSSH client
+RUN apk add --no-cache openssh
+
 # Switch back to jenkins user
 USER jenkins
 
