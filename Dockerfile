@@ -17,8 +17,14 @@ RUN apk add --no-cache python3 pipx
 # Install OpenSSH client
 RUN apk add --no-cache openssh
 
+# Create a writable temp directory
+RUN mkdir -p /home/jenkins/tmp && chmod 777 /home/jenkins/tmp
+
 # Switch back to jenkins user
 USER jenkins
+
+# Set TMPDIR to the writable temp directory
+ENV TMPDIR=/home/jenkins/tmp
 
 # Default command to keep the container running
 CMD ["/bin/sh"]
