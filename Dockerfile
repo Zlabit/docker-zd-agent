@@ -17,6 +17,9 @@ RUN apk add --no-cache python3 pipx
 # Install OpenSSH client
 RUN apk add --no-cache openssh
 
+# Install Node.js and npm
+RUN apk add --no-cache nodejs npm
+
 # Create a writable temp directory
 RUN mkdir -p /home/jenkins/tmp && chmod 777 /home/jenkins/tmp
 
