@@ -21,7 +21,7 @@ RUN apk add --no-cache openssh
 RUN apk add --no-cache nodejs npm
 
 # Download and install Taskfile (task)
-RUN npm install -g @go-task/cli
+RUN sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
 
 # Create a writable temp directory
 RUN mkdir -p /home/jenkins/tmp && chmod 777 /home/jenkins/tmp
