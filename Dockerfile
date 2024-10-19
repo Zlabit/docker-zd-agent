@@ -1,5 +1,5 @@
 # Use the official Jenkins agent image as the base image
-FROM dockerhub.zlabi.dev/jenkins/agent:alpine-jdk17
+FROM dockerhub.zlabi.dev/jenkins/agent:alpine-jdk21
 
 # Switch to root user to install dependencies
 USER root
