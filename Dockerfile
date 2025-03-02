@@ -1,5 +1,5 @@
 # Use the official Jenkins agent image as the base image
-FROM dockerhub.zlabi.dev/jenkins/agent:alpine-jdk21
+FROM hub.docker.zlabi.dev/jenkins/agent:alpine-jdk21
 
 # Switch to root user to install dependencies
 USER root
@@ -9,6 +9,9 @@ RUN apk update
 
 # Install Docker CLI
 RUN apk add --no-cache docker-cli
+
+# Install Docker Compose V2 plugin
+RUN apk add --no-cache docker-cli-compose@v2.29.2-r0
 
 # Install Python3 and pip
 ENV PYTHONUNBUFFERED=1
