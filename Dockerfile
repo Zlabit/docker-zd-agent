@@ -11,7 +11,7 @@ RUN apk update
 RUN apk add --no-cache docker-cli
 
 # Install Docker Compose V2 plugin
-RUN apk add --no-cache docker-cli-compose@v2.29.2-r0
+RUN apk add --no-cache docker-cli-compose
 
 # Install Python3 and pip
 ENV PYTHONUNBUFFERED=1

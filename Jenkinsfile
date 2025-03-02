@@ -5,9 +5,9 @@ pipeline {
         }
     }
     environment {
-        DOCKER_REPO = 'dockerrepo.zlabi.dev/docker-zd-agent'
+        DOCKER_REPO = 'repo.docker.zlabi.dev/docker-zd-agent'
         DOCKER_CREDENTIALS_ID = 'nexus-jenkins'
-        DOCKER_REPO_LINK = 'https://dockerrepo.zlabi.dev/'
+        DOCKER_REPO_LINK = 'https://repo.docker.zlabi.dev/'
     }
 
     stages {
